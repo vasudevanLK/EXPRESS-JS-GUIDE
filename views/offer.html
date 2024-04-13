@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Offer</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .section {
+        margin-bottom: 30px;
+    }
+    .video-section {
+        background-color: #ffcccc;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .product-details {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .product-name {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .product-description {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .pricing-offers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .offer {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 0 10px;
+        text-align: center;
+        background-color: #e6f2ff;
+    }
+    .offer h3 {
+        margin-bottom: 10px;
+        color: #3366ff;
+    }
+    .deadline {
+        text-align: center;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="section video-section">
+        <div class="video-container">
+            <!-- Embed your network video here -->
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="section product-details">
+        <div class="product-name">Special Product</div>
+        <div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam purus eu libero hendrerit scelerisque.</div>
+    </div>
+    <div class="section pricing-offers">
+        <div class="offer">
+            <h3>Offer 1</h3>
+            <p>$99</p>
+            <p>Regular Price: $129</p>
+        </div>
+        <div class="offer">
+            <h3>Offer 2</h3>
+            <p>$149</p>
+            <p>Regular Price: $199</p>
+        </div>
+        <div class="offer">
+            <h3>Offer 3</h3>
+            <p>$199</p>
+            <p>Regular Price: $249</p>
+        </div>
+    </div>
+    <div class="section deadline">
+        <p>Hurry up! Offer ends in:</p>
+        <div id="countdown"></div>
+    </div>
+</div>
+<script>
+    // Deadline countdown
+    const deadline = new Date("April 30, 2024 00:00:00").getTime();
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = deadline - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+</body>
+</html>
