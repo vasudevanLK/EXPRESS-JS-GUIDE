@@ -1,0 +1,4 @@
+[18/4/2024, 8:18:20 pm] GET	 undefined 	 /
+[18/4/2024, 8:30:07 pm] GET	 undefined 	 /
+[18/4/2024, 8:30:36 pm] GET	 undefined 	 /rooms
+[18/4/2024, 8:30:36 pm] GET	 undefined 	 /script.js
